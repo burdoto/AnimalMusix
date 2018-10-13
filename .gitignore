@@ -31,3 +31,5 @@ CrystalShard.iml
 *.jar
 *.exe
 classes/artifacts/AnimalMusix_jar/launch4j.xml
+*.class
+*.zip
