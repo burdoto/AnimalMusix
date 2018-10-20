@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">AnimalMusix</string>
+    <string name="play_pause">Play/Pause</string>
+    <string name="wild_world">Wild World</string>
+    <string name="new_leaf">New Leaf</string>
+
+    <string name="loc_wildworld_hourly">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_1">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_2">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_3">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_4">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_5">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_6">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_7">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_8">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_9">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_10">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_11">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_12">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_13">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_14">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_15">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_16">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_17">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_18">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_19">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_20">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_21">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_22">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_23">songs/wild_world/hourly.mp3</string>
+    <string name="loc_wildworld_24">songs/wild_world/hourly.mp3</string>
 </resources>
