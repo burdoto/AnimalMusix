@@ -33,3 +33,4 @@ CrystalShard.iml
 classes/artifacts/AnimalMusix_jar/launch4j.xml
 *.class
 *.zip
+AndroidApp/KeyStore/store.jks
