@@ -10,6 +10,7 @@
     <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
             android:text="@string/play_pause"
             android:id="@+id/playpause"
             android:onClick="onPlayPause"
@@ -17,6 +18,7 @@
     <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:text="@string/wild_world"
             android:id="@+id/change_wildworld"
             android:onClick="changetoWildWorld"
@@ -24,6 +26,7 @@
     <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
             android:text="@string/new_leaf"
             android:id="@+id/change_newleaf"
             android:onClick="changetoNewLeaf"
