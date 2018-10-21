@@ -35,6 +35,7 @@ public class PlaySong extends AppCompatActivity {
                     PlaySong.this.hour = calendar.get(Calendar.HOUR_OF_DAY);
                     if (playing) {
                         if (!currState || (!game.equals(playingGame) || hour != playingHour)) {
+                            if (player != null) player.stop();
                             playingGame = game;
                             playingHour = hour;
                             player = MediaPlayer.create(getApplicationContext(), R.raw.hourly);
