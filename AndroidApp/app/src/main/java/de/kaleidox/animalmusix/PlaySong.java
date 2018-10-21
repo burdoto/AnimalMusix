@@ -1,5 +1,6 @@
 package de.kaleidox.animalmusix;
 
+import android.app.Notification;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -23,36 +24,40 @@ public class PlaySong extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_song);
 
-        scheduler = Executors.newSingleThreadScheduledExecutor();
+        if (player != null) {
+            scheduler = Executors.newSingleThreadScheduledExecutor();
 
-        scheduler.scheduleAtFixedRate(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Date date = new Date();   // given date
-                    Calendar calendar = GregorianCalendar.getInstance(); // creates a new calendar instance
-                    calendar.setTime(date);   // assigns calendar to given date
-                    PlaySong.this.hour = calendar.get(Calendar.HOUR_OF_DAY);
-                    if (playing) {
-                        if (!currState || (!game.equals(playingGame) || hour != playingHour)) {
-                            if (player != null) player.stop();
-                            playingGame = game;
-                            playingHour = hour;
-                            player = MediaPlayer.create(getApplicationContext(), R.raw.hourly);
-                            player.start();
-                            Thread.sleep(13000);
-                            player = MediaPlayer.create(getApplicationContext(), Util.getMusicId(playingGame, hour));
-                            player.setLooping(true);
-                            player.start();
+            scheduler.scheduleAtFixedRate(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Date date = new Date();   // given date
+                        Calendar calendar = GregorianCalendar.getInstance(); // creates a new calendar instance
+                        calendar.setTime(date);   // assigns calendar to given date
+                        PlaySong.this.hour = calendar.get(Calendar.HOUR_OF_DAY);
+                        if (playing) {
+                            if (!currState || (!game.equals(playingGame) || hour != playingHour)) {
+                                if (player != null) player.stop();
+                                playingGame = game;
+                                playingHour = hour;
+                                player = MediaPlayer.create(getApplicationContext(), R.raw.hourly);
+                                player.start();
+                                Thread.sleep(13000);
+                                player = MediaPlayer.create(getApplicationContext(), Util.getMusicId(playingGame, hour));
+                                player.setLooping(true);
+                                player.start();
+                                if (!currState) currState = true;
+                            }
+                        } else {
+                            player.pause();
+                            currState = false;
                         }
-                    } else {
-                        player.pause();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
                 }
-            }
-        }, 0, 1, TimeUnit.SECONDS);
+            }, 0, 1, TimeUnit.SECONDS);
+        }
     }
 
     public void onPlayPause(View view) {
@@ -61,9 +66,11 @@ public class PlaySong extends AppCompatActivity {
 
     public void changetoWildWorld(View view) {
         game = "wildworld";
+        if (!currState) onPlayPause(view);
     }
 
     public void changetoNewLeaf(View view) {
         game = "newleaf";
+        if (!currState) onPlayPause(view);
     }
 }
