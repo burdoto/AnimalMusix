@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="AnimalMusix:jar">
-    <output-path>$PROJECT_DIR$/classes/artifacts/AnimalMusix_jar</output-path>
-    <root id="archive" name="AnimalMusix.jar">
-      <element id="module-output" name="AnimalMusix" />
-      <element id="library" level="module" name="res" module-name="AnimalMusix" />
-    </root>
-  </artifact>
-</component>
