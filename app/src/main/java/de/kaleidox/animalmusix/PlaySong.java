@@ -40,8 +40,8 @@ public class PlaySong extends AppCompatActivity {
                         if (playing) {
                             if (!currState || (!game.equals(playingGame) || hour != playingHour)) {
                                 if (player != null) player.stop();
-                                PlaySong.this.vol = 1.0f;
-                                player.setVolume(vol, vol);
+                                //PlaySong.this.vol = 1.0f;
+                                //player.setVolume(vol, vol);
                                 playingGame = game;
                                 playingHour = hour;
                                 player = MediaPlayer.create(getApplicationContext(), R.raw.hourly);
@@ -51,10 +51,10 @@ public class PlaySong extends AppCompatActivity {
                                 player.setLooping(true);
                                 player.start();
                                 if (!currState) currState = true;
-                            } else if (currMin >= 59 && currSec >= 40) {
+                            }/* else if (currMin >= 59 && currSec >= 40) {
                                 vol -= 0.02857142857f;
                                 player.setVolume(vol, vol);
-                            }
+                            }*/
                         } else {
                             player.pause();
                             currState = false;
