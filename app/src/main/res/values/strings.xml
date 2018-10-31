@@ -29,4 +29,5 @@
     <string name="loc_wildworld_22">songs/wild_world/hourly.mp3</string>
     <string name="loc_wildworld_23">songs/wild_world/hourly.mp3</string>
     <string name="loc_wildworld_24">songs/wild_world/hourly.mp3</string>
+    <string name="disclaimer_btn">Copyright of music reserved to Nintendo©</string>
 </resources>

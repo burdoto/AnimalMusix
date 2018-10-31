@@ -1,6 +1,5 @@
 package de.kaleidox.animalmusix;
 
-import android.app.Notification;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,11 +12,12 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class PlaySong extends AppCompatActivity {
-    private MediaPlayer player;
+    private MediaPlayer player = null;
     private ScheduledExecutorService scheduler;
     private String game = "wildworld", playingGame = "wildworld";
     private int hour = -1, playingHour = -2;
     private boolean playing = true, currState = true;
+    private float vol = 1.0f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +35,13 @@ public class PlaySong extends AppCompatActivity {
                         Calendar calendar = GregorianCalendar.getInstance(); // creates a new calendar instance
                         calendar.setTime(date);   // assigns calendar to given date
                         PlaySong.this.hour = calendar.get(Calendar.HOUR_OF_DAY);
+                        int currMin = calendar.get(Calendar.MINUTE);
+                        int currSec = calendar.get(Calendar.SECOND);
                         if (playing) {
                             if (!currState || (!game.equals(playingGame) || hour != playingHour)) {
                                 if (player != null) player.stop();
+                                PlaySong.this.vol = 1.0f;
+                                player.setVolume(vol, vol);
                                 playingGame = game;
                                 playingHour = hour;
                                 player = MediaPlayer.create(getApplicationContext(), R.raw.hourly);
@@ -47,6 +51,9 @@ public class PlaySong extends AppCompatActivity {
                                 player.setLooping(true);
                                 player.start();
                                 if (!currState) currState = true;
+                            } else if (currMin >= 59 && currSec >= 40) {
+                                vol -= 0.02857142857f;
+                                player.setVolume(vol, vol);
                             }
                         } else {
                             player.pause();

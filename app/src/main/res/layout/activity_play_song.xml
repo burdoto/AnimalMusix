@@ -34,6 +34,14 @@
                 android:id="@+id/change_newleaf"
                 android:onClick="changetoNewLeaf"
         />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="490dp"
+            android:text="@string/disclaimer_btn"
+            android:textAlignment="center"
+            />
     </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>
