@@ -8,3 +8,6 @@
 /build
 /captures
 .externalNativeBuild
+deployment_cert
+deployment_cert.der
+*.aab
